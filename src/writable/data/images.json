@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "user_id": 2,
+        "original_name": "carrito.png",
+        "file_name": "img_2_1_1764353221.png",
+        "file_path": "uploads\/images\/img_2_1_1764353221.png",
+        "file_size": 429277,
+        "mime_type": "image\/png",
+        "width": 2560,
+        "height": 2386,
+        "category": "general",
+        "description": "Solo es una prueba",
+        "uploaded_at": "2025-11-28 18:07:01"
+    }
+]

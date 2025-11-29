@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Administrador",
+        "email": "admin@example.com",
+        "login": "admin",
+        "password": "$2y$10$5ArJDIIr7lqGQC0pwe\/VoeQtWqN.Lo8fkiavrhjNMZkgW4DuFs4.y",
+        "role": "admin",
+        "avatar": null,
+        "is_active": 1,
+        "created_at": "2025-11-19 16:02:50"
+    },
+    {
+        "id": 2,
+        "name": "Usuario Básico",
+        "email": "user@example.com",
+        "login": "user",
+        "password": "$2y$10$maVasgUJrSHJnHCeUoe8k.mt.TSZRjV5Sj9a27P4f1.7E8tegf.x2",
+        "role": "user",
+        "avatar": null,
+        "is_active": 1,
+        "created_at": "2025-11-19 16:02:50"
+    }
+]

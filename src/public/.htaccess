@@ -1,0 +1,59 @@
+# Archivo .htaccess para CodeIgniter 4
+# Este archivo maneja las URLs amigables
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# Habilitar rewrite engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirigir las solicitudes al front controller (index.php)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+# Deshabilitar acceso a archivos sensibles
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Proteger archivos de configuración
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Configuración de cache para recursos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Imágenes
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+
+    # CSS y JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Compresión GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
+</IfModule>
+
+# Configuración de seguridad
+<IfModule mod_headers.c>
+    # Prevenir clickjacking
+    Header always append X-Frame-Options SAMEORIGIN
+
+    # Prevenir MIME type sniffing
+    Header set X-Content-Type-Options nosniff
+
+    # Habilitar XSS protection
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
